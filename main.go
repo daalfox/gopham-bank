@@ -23,8 +23,9 @@ func main() {
 }
 
 type User struct {
-	ID   int    `json:"id"`
-	Name string `json:"name" gorm:"unique"`
+	ID      uint    `json:"id"`
+	Name    string  `json:"name" gorm:"unique"`
+	Balance float64 `json:"balance"`
 }
 
 func attachRoutes(db *gorm.DB) {
@@ -36,7 +37,7 @@ func attachRoutes(db *gorm.DB) {
 		db.Find(&users)
 		json.NewEncoder(w).Encode(users)
 	})
-	http.HandleFunc("POST /register", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("POST /accounts", func(w http.ResponseWriter, r *http.Request) {
 		var user User
 
 		json.NewDecoder(r.Body).Decode(&user)
