@@ -1,4 +1,4 @@
-module github.com/daalfox/gopher-bank
+module github.com/daalfox/gopham-bank
 
 go 1.22.4
 

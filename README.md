@@ -1,2 +1,2 @@
-# Gopher bank
-A bank in which the currency is sticks!
+# Gopham bank
+The central bank of Gopham city.
